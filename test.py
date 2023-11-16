@@ -2,11 +2,11 @@ class Parent:
     def __init__(self, name, age):
         self.name = name
         self.age = age
-        self.relationship = self.relationship()
+        self.relationship = self.label_relationship()
         self.saying = self.say()
     def say(self):
         return("Hello I am a " + self.relationship)
-    def relationship(self):
+    def label_relationship(self):
         return "Parent"
     def display(self):
         print(self.name)
@@ -16,7 +16,7 @@ class Parent:
 class Child(Parent):
     def __init__(self, name, age):
         super().__init__(name, age)
-    def relationship(self):
+    def label_relationship(self):
         return "Child"
 
 def compare_ages_of(a, b):
@@ -54,9 +54,6 @@ def main():
     print("---------------------")
     print("Between " + person2.name + " and " + person3.name + ", " +compare_ages_of(person2, person3)+ " is the older")
     print("Between " + person1.name + " and " + person3.name + ", " +compare_ages_of(person1, person3)+ " is the older")
-
-
-
 
 if __name__ == '__main__':
     main()
